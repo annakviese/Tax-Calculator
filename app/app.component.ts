@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 
 @Component ({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>
-               <provinces></provinces>`
+    template: '<input-form></input-form>'
 
 })
-export class AppComponent { 
-    title = "TFSA vs RRSP"
-    
-}
+export class AppComponent { }
