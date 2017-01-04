@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Input Form</h1>
-    <form>
+    <form [formGroup]="inputForm" class = "input" (ngSubmit)="onSubmit($event)">
       <div class="form-group">
         <label for="tax-bracket">Tax Bracket</label>
         <input type="text" class="form-control" id="tax-bracket" required>

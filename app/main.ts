@@ -4,11 +4,11 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ReactiveFormsModule } from '@angular/forms';
 import {SelectModule} from 'angular2-select';
 import { AppComponent } from './app.component';
-import { ProvincesComponent } from './provinces.component';
+import { InputFormComponent } from './input-form.component';
 
 
 @NgModule ({
-    declarations: [ AppComponent, ProvincesComponent ],
+    declarations: [ AppComponent, InputFormComponent ],
     imports: [ BrowserModule, ReactiveFormsModule,
         SelectModule],
     bootstrap: [ AppComponent ]
