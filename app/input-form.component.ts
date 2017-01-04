@@ -8,8 +8,10 @@ import { Input }    from './input';
 })
 export class InputFormComponent {
   TaxBracket = [15000, 50000];
+  model = new Input [15000,500, 5, 0.5, 0.1];
   submitted = false;
   onSubmit() { this.submitted = true; }
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
 }
+
