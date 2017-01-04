@@ -22,6 +22,7 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      'angular2-select': 'node_modules/angular2-select',
 
       // other libraries
       'rxjs':                      'npm:rxjs',
@@ -34,6 +35,10 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      'angular2-select': {
+        main: 'index.js',
         defaultExtension: 'js'
       }
     }
