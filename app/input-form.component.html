@@ -3,29 +3,38 @@
     <form [formGroup]="inputForm" class = "input" (ngSubmit)="onSubmit($event)">
       <div class="form-group">
         <label for="tax-bracket">Tax Bracket</label>
-        <input type="text" class="form-control" id="tax-bracket" required>
+        <p> Please enter your income per year </p>
+        <input type="text" pattern="[0-9]*" class="form-control" id="tax-bracket" placeholder="50000" required>
+        
       </div>
       <div class="form-group">
         <label for="retirenment-tax">Average Retirenment Tax</label>
-        <input type="text" class="form-control" id="retirenment-tax">
+        <input type="text" pattern="[0-9]*" class="form-control" id="retirenment-tax" required>
       </div>
       <div class="form-group">
         <label for="deposit">Deposit Amount</label>
-        <input type="text" class="form-control" id="deposit">
+        <input type="text" pattern="[0-9]*" class="form-control" id="deposit" required>
       </div>
       <div class="form-group">
         <label for="years">Years to Invest</label>
-        <input type="text" class="form-control" id="years">
+        <input type="text" pattern="[0-9]*" class="form-control" id="years" required>
       </div>
       <div class="form-group">
         <label for="roi">Return on Investment Rate</label>
-        <input type="text" class="form-control" id="roi">
+        <input type="text" pattern="[0-9]*" class="form-control" id="roi" required>
       </div>
       <div class="form-group">
         <label for="inflation">Projected Inflation Rate</label>
-        <input type="text" class="form-control" id="inflation">
+        <input type="text" pattern="[0-9]*" class="form-control" id="inflation" required>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
 
+
+<!--public TaxBracket: number,
+    public AvRetirenmentTax: number,
+    public DepositAmount: number,
+    public Years: number,
+    public ROI: number, 
+    public Inflation: number,-->
