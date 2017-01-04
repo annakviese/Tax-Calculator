@@ -1,6 +1,6 @@
 export class Input {
   constructor(
-    public TaxRate: number,
+    public TaxBracket: number,
     public AvRetirenmentTax: number,
     public DepositAmount: number,
     public Years: number,
