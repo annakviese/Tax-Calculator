@@ -9,24 +9,23 @@ import { Input }    from './input';
 })
 export class InputFormComponent {
   MarginalTaxRate = [50000];
-  model = new Input() ;
+  model = new Input();
   submitted = false;
 
   onSubmit() {
        this.submitted = true; 
-       this.results
        //calculates After Tax Value
-       this.model.tsfaAfterTax = parseInt(this.model.DepositAmount) * (1 - parseFloat(this.model.MarginalTaxRate));
-       this.model.rrspAfterTax =  parseInt(this.model.DepositAmount);
+       this.model.tsfaAfterTax = this.model.DepositAmount * (1 - (this.model.MarginalTaxRate));
+       this.model.rrspAfterTax =  this.model.DepositAmount;
        //calculates Future Value in Todays Dollars
-       this.model.tsfaFutureValue = parseInt(this.model.tsfaAfterTax) * ((parseInt(this.model.Years) * (1 + parseFloat(this.model.ROI));
-       this.model.rrspFutureValue =  parseInt(this.model.rrspAfterTax) * ((parseInt(this.model.Years) * (1 + parseFloat(this.model.ROI));
+       this.model.tsfaFutureValue = this.model.tsfaAfterTax * (this.model.Years * (1 + this.model.ROI));
+       this.model.rrspFutureValue =  this.model.rrspAfterTax * (this.model.Years * (1 + this.model.ROI));
        //calculates Tax Paid Upon Withdrawal
        this.model.tsfaTaxPaid = 0;
-       this.model.rrspTaxPaid = parseInt(this.model.rrspFutureValue) * (parseFloat(this.model.AvRetirenmentTax));
+       this.model.rrspTaxPaid = this.model.rrspFutureValue * this.model.AvRetirenmentTax;
        //calculates Future Value at the End of the period
-       this.model.tsfaEndValue = parseInt(this.model.tsfaFutureValue);
-       this.model.rrspEndValue = parseInt(this.model.rrspFutureValue) - (parseInt(this.model.rrspTaxPaid)); 
+       this.model.tsfaEndValue = this.model.tsfaFutureValue;
+       this.model.rrspEndValue = this.model.rrspFutureValue - this.model.rrspTaxPaid; 
     }
 
 }
