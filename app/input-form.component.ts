@@ -8,11 +8,25 @@ import { Input }    from './input';
   
 })
 export class InputFormComponent {
-  TaxBracket = [15000, 50000];
-  model = new Input(15000, 0.35, 500, 5, 0.5, 0.1) ;
+  MarginalTaxRate = [50000];
+  model = new Input();
   submitted = false;
-  onSubmit() { this.submitted = true; }
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+
+  onSubmit() {
+       this.submitted = true; 
+       //calculates After Tax Value
+       this.model.tsfaAfterTax = this.model.DepositAmount * (1 - (this.model.MarginalTaxRate));
+       this.model.rrspAfterTax =  this.model.DepositAmount;
+       //calculates Future Value in Todays Dollars
+       this.model.tsfaFutureValue = this.model.tsfaAfterTax * (this.model.Years * (1 + this.model.ROI));
+       this.model.rrspFutureValue =  this.model.rrspAfterTax * (this.model.Years * (1 + this.model.ROI));
+       //calculates Tax Paid Upon Withdrawal
+       this.model.tsfaTaxPaid = 0;
+       this.model.rrspTaxPaid = this.model.rrspFutureValue * this.model.AvRetirenmentTax;
+       //calculates Future Value at the End of the period
+       this.model.tsfaEndValue = this.model.tsfaFutureValue;
+       this.model.rrspEndValue = this.model.rrspFutureValue - this.model.rrspTaxPaid; 
+    }
+
 }
 
