@@ -14,4 +14,6 @@ import { InputFormComponent } from './input-form.component';
   ],
   bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }
+

@@ -1,40 +1,62 @@
 <div class="container">
     <h1>Input Form</h1>
-    <form [formGroup]="inputForm" class = "input" (ngSubmit)="onSubmit($event)">
+    <form  (ngSubmit)="onSubmit()" #inputForm="ngForm">
       <div class="form-group">
-        <label for="tax-bracket">Tax Bracket</label>
-        <p> Please enter your income per year </p>
-        <input type="text" pattern="[0-9]*" class="form-control" id="tax-bracket" placeholder="50000" required>
-        
+        <label for="tax-bracket">Enter Your Current Marginal Tax Rate</label>
+        <input type="text" pattern="\d+(\.\d*)?"class="form-control" placeholder="0.36" id="tax-bracket" required 
+        [(ngModel)]="model.MarginalTaxRate" name="MarginalTaxRate">
+        <!--TODO: remove this: {{model.MarginalTaxRate}}-->
       </div>
       <div class="form-group">
-        <label for="retirenment-tax">Average Retirenment Tax</label>
-        <input type="text" pattern="[0-9]*" class="form-control" id="retirenment-tax" required>
+        <label for="retirenment-tax">Enter Your Average Retirenment Tax</label>
+        <input type="text" pattern="\d+(\.\d*)?" class="form-control" placeholder="0.2" id="retirenment-tax" required 
+        [(ngModel)]="model.AvRetirenmentTax" name="AvRetirenmentTax">
+        <!--TODO: remove this: {{model.AvRetirenmentTax}}-->
       </div>
       <div class="form-group">
-        <label for="deposit">Deposit Amount</label>
-        <input type="text" pattern="[0-9]*" class="form-control" id="deposit" required>
+        <label for="deposit">Enter The Deposit Amount </label>
+        <input type="text" pattern="\d+(\.\d*)?" class="form-control" placeholder="300" id="deposit" required 
+        [(ngModel)]="model.DepositAmount" name="DepositAmount">
+        <!--TODO: remove this: {{model.DepositAmount}}-->
       </div>
       <div class="form-group">
-        <label for="years">Years to Invest</label>
-        <input type="text" pattern="[0-9]*" class="form-control" id="years" required>
+        <label for="years">Enter Amount Of Years to Invest</label>
+        <input type="text" pattern="\d+(\.\d*)?" class="form-control" placeholder="5" id="years" required 
+        [(ngModel)]="model.Years" name="Years">
+        <!--TODO: remove this: {{model.Years}}-->
       </div>
       <div class="form-group">
-        <label for="roi">Return on Investment Rate</label>
-        <input type="text" pattern="[0-9]*" class="form-control" id="roi" required>
+        <label for="roi">Enter the Return on Investment Rate</label>
+        <input type="text" pattern="\d+(\.\d*)?" class="form-control" placeholder="0.2" id="roi" required 
+        [(ngModel)]="model.ROI" name="ROI">
+        <!--TODO: remove this: {{model.ROI}}-->
       </div>
       <div class="form-group">
-        <label for="inflation">Projected Inflation Rate</label>
-        <input type="text" pattern="[0-9]*" class="form-control" id="inflation" required>
+        <label for="inflation">Enter the Projected Inflation Rate</label>
+        <input type="text" pattern="\d+(\.\d*)?" class="form-control" placeholder="0.01" id="inflation" required 
+        [(ngModel)]="model.Inflation" name="Inflation">
+        <!--TODO: remove this: {{model.Inflation}}-->
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+
+        <!-- RESULTS -->
+    <div *ngIf="submitted" class="form-group">
+            Show me after Submit!
+
+            <div class = "TFSA">
+                TFSA
+                <div class="results">Amount of after-tax deposited: {{model.tsfaAfterTax}}</div>
+                <div class="results">Future Value in Todays Dollars: {{model.tsfaFutureValue}}</div>
+                <div class="results">Tax Paid Upon Withdrawal {{model.tsfaTaxPaid}}</div>
+                <div class="results">After Tax Value at The end of the period {{model.tsfaEndValue}}</div>
+            </div>
+            <div class = "RRSP">
+                RRSP
+                <div class="results">Amount of after-tax deposited: {{model.rrspAfterTax}}</div>
+                <div class="results">Future Value in Todays Dollars {{model.rrspFutureValue}}</div>
+                <div class="results">Tax Paid Upon Withdrawal {{model.rrspTaxPaid}}</div>
+                <div class="results">After Tax Value at The end of the period {{model.rrspEndValue}}</div>
+            </div>
+    </div>
 </div>
-
-
-<!--public TaxBracket: number,
-    public AvRetirenmentTax: number,
-    public DepositAmount: number,
-    public Years: number,
-    public ROI: number, 
-    public Inflation: number,-->
