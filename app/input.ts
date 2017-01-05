@@ -13,6 +13,5 @@ export class Input {
     public rrspTaxPaid : number;
     public tsfaEndValue: number;
     public rrspEndValue : number;
-  constructor(
-  ) {  }
+
 }
