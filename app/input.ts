@@ -5,6 +5,7 @@ export class Input {
     public Years: number;
     public ROI: number;
     public Inflation: number;
+    public rateOfReturn: number;
     public tsfaAfterTax: number;
     public rrspAfterTax: number;
     public tsfaFutureValue: number;
