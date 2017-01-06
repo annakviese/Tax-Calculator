@@ -4,6 +4,7 @@ import { Input }    from './input';
 @Component({
   moduleId: module.id,
   selector: 'input-form',
+  styleUrls: ['css/style.css'],
   templateUrl: 'input-form.component.html',
   
 })

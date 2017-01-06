@@ -8,13 +8,5 @@ import { AppModule } from './app.module';
 import { InputFormComponent } from './input-form.component';
 
 
-// @NgModule ({
-//     declarations: [ AppComponent, InputFormComponent ],
-//     imports: [ BrowserModule, ReactiveFormsModule,
-//         SelectModule, NgModule],
-//     bootstrap: [ AppComponent ]
-// })
-// class AppModule { }
-
 platformBrowserDynamic() 
     .bootstrapModule(AppModule);

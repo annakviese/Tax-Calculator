@@ -41,22 +41,44 @@
     </form>
 
         <!-- RESULTS -->
-    <div *ngIf="submitted" class="form-group">
-            Show me after Submit!
-
-            <div class = "TFSA">
-                TFSA
-                <div class="results">Amount of after-tax deposited: {{model.tsfaAfterTax}}</div>
-                <div class="results">Future Value in Todays Dollars: {{model.tsfaFutureValue}}</div>
-                <div class="results">Tax Paid Upon Withdrawal {{model.tsfaTaxPaid}}</div>
-                <div class="results">After Tax Value at The end of the period {{model.tsfaEndValue}}</div>
-            </div>
-            <div class = "RRSP">
-                RRSP
-                <div class="results">Amount of after-tax deposited: {{model.rrspAfterTax}}</div>
-                <div class="results">Future Value in Todays Dollars {{model.rrspFutureValue}}</div>
-                <div class="results">Tax Paid Upon Withdrawal {{model.rrspTaxPaid}}</div>
-                <div class="results">After Tax Value at The end of the period {{model.rrspEndValue}}</div>
-            </div>
+    <div *ngIf="submitted" class="submitted">
+          <div class = "tfsa">
+              <h2>TFSA </h2>
+              <div class="form-group">
+                <label> Amount of after-tax deposited:</label> 
+                <div class = "form-control"> {{model.tsfaAfterTax}}</div>
+              </div>
+              <div class="form-group">
+                <label>Future Value in Todays Dollars:</label> 
+                <div class = "form-control"> {{model.tsfaFutureValue}}</div>
+              </div>
+              <div class="form-group">
+                <label>Tax Paid Upon Withdrawal:</label> 
+                <div class = "form-control"> {{model.tsfaTaxPaid}}</div>
+              </div>
+              <div class="form-group">
+                <label>After Tax Value at The end of the period:</label> 
+                <div class = "form-control"> {{model.tsfaEndValue}}</div>
+              </div> 
+          </div>
+           <div class = "rrsp">
+              <h2>RRSP</h2>
+              <div class="form-group">
+                <label> Amount of after-tax deposited:</label> 
+                <div class = "form-control"> {{model.rrspAfterTax}}</div>
+              </div>
+              <div class="form-group">
+                <label>Future Value in Todays Dollars:</label> 
+                <div class = "form-control"> {{model.rrspFutureValue}}</div>
+              </div>
+              <div class="form-group">
+                <label>Tax Paid Upon Withdrawal:</label> 
+                <div class = "form-control"> {{model.rrspTaxPaid}}</div>
+              </div>
+              <div class="form-group">
+                <label>After Tax Value at The end of the period:</label> 
+                <div class = "form-control"> {{model.rrspEndValue}}</div>
+              </div> 
+          </div>
     </div>
 </div>

@@ -36,6 +36,7 @@ var InputFormComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'input-form',
+            styleUrls: ['css/style.css'],
             templateUrl: 'input-form.component.html',
         }), 
         __metadata('design:paramtypes', [])
