@@ -12,18 +12,18 @@ var core_1 = require('@angular/core');
 var input_1 = require('./input');
 var InputFormComponent = (function () {
     function InputFormComponent() {
-        this.MarginalTaxRate = [50000];
+        this.MarginalTaxRate = [0.36];
         this.model = new input_1.Input();
         this.submitted = false;
     }
     InputFormComponent.prototype.onSubmit = function () {
         this.submitted = true;
         //calculates After Tax Value
-        this.model.tsfaAfterTax = this.model.DepositAmount * (1 - (this.model.MarginalTaxRate));
+        this.model.tsfaAfterTax = this.model.DepositAmount * (1 - this.model.MarginalTaxRate);
         this.model.rrspAfterTax = this.model.DepositAmount;
         //calculates Future Value in Todays Dollars
-        this.model.tsfaFutureValue = this.model.tsfaAfterTax * (this.model.Years * (1 + this.model.ROI));
-        this.model.rrspFutureValue = this.model.rrspAfterTax * (this.model.Years * (1 + this.model.ROI));
+        this.model.tsfaFutureValue = this.model.tsfaAfterTax * Math.pow(this.model.Years, (1 + this.model.ROI));
+        this.model.rrspFutureValue = this.model.rrspAfterTax * Math.pow(this.model.Years, (1 + this.model.ROI));
         //calculates Tax Paid Upon Withdrawal
         this.model.tsfaTaxPaid = 0;
         this.model.rrspTaxPaid = this.model.rrspFutureValue * this.model.AvRetirenmentTax;
