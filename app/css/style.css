@@ -1,3 +1,6 @@
+h1 {
+    margin-bottom: 5%;
+}
 .submitted {
     display: flex;
     flex-direction: row;
