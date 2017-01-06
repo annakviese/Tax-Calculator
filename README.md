@@ -9,7 +9,6 @@ Since it is my first independent Angular 2 app, I've used the angular quickstart
 * Angular 2
 * TypeScript
 * HTML5
-* JavaScript 
 
 ## To run the app 
 
